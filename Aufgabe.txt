@@ -1,0 +1,48 @@
+class Fahrzeug {
+  String marke;
+  String modell;
+  int baujahr;
+  
+  Fahrzeug(this.marke, this.modell, this.baujahr);
+  
+  void zeigeDetails(){
+    print("Marke : $marke, Modell : $modell, Baujahr : $baujahr");
+  } 
+}
+
+class Auto extends Fahrzeug {
+  int anzahlDerTueren;
+  
+  Auto(String marke, String modell, int baujahr, this.anzahlDerTueren) : super(marke, modell, baujahr);
+  
+  @override
+  void zeigeDetails(){
+    super.zeigeDetails();
+    print("Anzahl der Türen : $anzahlDerTueren");
+  }
+}
+
+class Motorrad extends Fahrzeug {
+  bool hatBeiwagen;
+  
+  Motorrad(String marke, String modell, int baujahr, this.hatBeiwagen) : super(marke, modell, baujahr);
+  
+  @override
+  void zeigeDetails(){
+    super.zeigeDetails();
+    print("Hat einen Beiwagen? : $hatBeiwagen");
+  }
+}
+
+void main(){
+Auto auto1 = Auto("Mercedes", "CLA", 2019, 5);
+Auto auto2 = Auto("Mercedes", "CLC", 2007, 3);
+Motorrad moto1 = Motorrad("BMW", "R18", 2014, true);
+Motorrad moto2 = Motorrad("Kawasaki", "Ninja", 2023, false);
+  
+auto1.zeigeDetails();
+auto2.zeigeDetails();
+moto1.zeigeDetails();
+moto2.zeigeDetails();
+}
+
